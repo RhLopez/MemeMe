@@ -126,6 +126,11 @@ class MemeEditorViewController: UIViewController {
     func save() {
         // Create meme object
         let meme = Meme(topText: topTextField.text!, bottomText: bottomTextField.text!, image: imagePickerView.image!, memedImage: memedImage!)
+        
+        // Add meme to array in the Application Delegate
+        let object = UIApplication.sharedApplication().delegate
+        let appDelegate = object as! AppDelegate
+        appDelegate.memes.append(meme)
     }
     
     @IBAction func shareMeme(sender: AnyObject) {
