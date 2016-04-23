@@ -155,6 +155,7 @@ class MemeEditorViewController: UIViewController {
         topTextField.text = "TOP"
         bottomTextField.text = "BOTTOM"
         configureUIButtons()
+        dismissViewControllerAnimated(true, completion: nil)
     }
     
     override func prefersStatusBarHidden() -> Bool {
