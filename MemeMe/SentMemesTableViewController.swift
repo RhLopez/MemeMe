@@ -18,6 +18,11 @@ class SentMemesTableViewController: UITableViewController {
         return (UIApplication.sharedApplication().delegate as! AppDelegate).memes
     }
     
+    @IBAction func createNewMeme(sender: AnyObject) {
+        let memeEditorVC = storyboard?.instantiateViewControllerWithIdentifier("MemeEditorViewController") as! MemeEditorViewController
+        presentViewController(memeEditorVC, animated: true, completion: nil)
+    }
+    
     // MARK: -UITableViewController
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return memes.count
