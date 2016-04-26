@@ -72,6 +72,38 @@
             </objects>
             <point key="canvasLocation" x="711" y="-197"/>
         </scene>
+        <!--Meme Detail View Controller-->
+        <scene sceneID="YBz-k1-YXg">
+            <objects>
+                <viewController storyboardIdentifier="MemeDetailViewController" id="Msm-7A-SxM" customClass="MemeDetailViewController" customModule="MemeMe" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="j2d-6e-Cnv"/>
+                        <viewControllerLayoutGuide type="bottom" id="VZa-mI-wiN"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="8dw-kQ-JCw">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Dhp-Y0-zoz">
+                                <rect key="frame" x="0.0" y="28" width="600" height="572"/>
+                            </imageView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="trailingMargin" secondItem="Dhp-Y0-zoz" secondAttribute="trailing" constant="-20" id="0n0-OR-kFi"/>
+                            <constraint firstItem="Dhp-Y0-zoz" firstAttribute="leading" secondItem="8dw-kQ-JCw" secondAttribute="leadingMargin" constant="-20" id="AYZ-fp-gwg"/>
+                            <constraint firstItem="Dhp-Y0-zoz" firstAttribute="top" secondItem="j2d-6e-Cnv" secondAttribute="bottom" constant="8" id="XWd-E9-ss7"/>
+                            <constraint firstItem="VZa-mI-wiN" firstAttribute="top" secondItem="Dhp-Y0-zoz" secondAttribute="bottom" id="zb3-ES-b15"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="memeImageView" destination="Dhp-Y0-zoz" id="MOV-Mc-zyq"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Mcm-1e-8Dc" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="711" y="564"/>
+        </scene>
         <!--List-->
         <scene sceneID="Vhg-Tx-tb3">
             <objects>
@@ -264,7 +296,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="bLc-TA-SYK" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="711" y="558"/>
+            <point key="canvasLocation" x="1471" y="268"/>
         </scene>
     </scenes>
 </document>

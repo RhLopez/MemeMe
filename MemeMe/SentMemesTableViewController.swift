@@ -11,6 +11,7 @@ import UIKit
 class SentMemesTableViewController: UITableViewController {
     
     override func viewDidAppear(animated: Bool) {
+        tabBarController?.tabBar.hidden = false
         tableView.reloadData()
     }
     
@@ -36,5 +37,14 @@ class SentMemesTableViewController: UITableViewController {
         cell.memeLabel.text = meme.topText + " " + meme.bottomText
     
         return cell
+    }
+    
+    override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+        let meme = memes[indexPath.row]
+        
+        let memeDetailVC = storyboard?.instantiateViewControllerWithIdentifier("MemeDetailViewController") as! MemeDetailViewController
+        
+        memeDetailVC.meme = meme
+        navigationController?.pushViewController(memeDetailVC, animated: true)
     }
 }
