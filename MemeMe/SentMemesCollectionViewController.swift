@@ -10,6 +10,10 @@ import UIKit
 
 class SentMemesCollectionViewController: UICollectionViewController {
     
+    override func viewDidAppear(animated: Bool) {
+        collectionView?.reloadData()
+    }
+    
     override func viewWillAppear(animated: Bool) {
         tabBarController?.tabBar.hidden = false
     }

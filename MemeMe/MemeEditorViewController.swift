@@ -23,6 +23,7 @@ class MemeEditorViewController: UIViewController {
     @IBOutlet weak var bottomTextFiedConstraint: NSLayoutConstraint!
     
     var memedImage: UIImage?
+    var meme: Meme?
     
     // Text attributes for textfields
     let memeTextAttributes = [
@@ -40,8 +41,11 @@ class MemeEditorViewController: UIViewController {
     
     override func viewWillAppear(animated: Bool) {
         super.viewWillAppear(animated)
-        configureUIButtons()
         subscribeToKeyboardNotifications()
+        configureUIButtons()
+        if let meme = meme {
+            memeEditSetup(meme)
+        }
     }
     
     override func viewWillDisappear(animated: Bool) {
@@ -60,7 +64,7 @@ class MemeEditorViewController: UIViewController {
         cameraButton.enabled = UIImagePickerController.isSourceTypeAvailable(UIImagePickerControllerSourceType.Camera)
         
         // Disable action button if user has not chosen an image
-        if imagePickerView.image == nil {
+        if imagePickerView.image == nil && meme == nil {
             actionButton.enabled = false
         } else {
             actionButton.enabled = true
@@ -172,6 +176,12 @@ class MemeEditorViewController: UIViewController {
             topTextFieldConstraint.constant = 60
             bottomTextFiedConstraint.constant = 60
         }
+    }
+    
+    func memeEditSetup(meme: Meme) {
+        topTextField.text = meme.topText
+        bottomTextField.text = meme.bottomText
+        imagePickerView.image = meme.image
     }
 }
 

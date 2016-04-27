@@ -10,7 +10,7 @@
         <scene sceneID="KT3-Vw-wla">
             <objects>
                 <tableViewController id="0hf-w1-bHo" customClass="SentMemesTableViewController" customModule="MemeMe" customModuleProvider="target" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="120" sectionHeaderHeight="28" sectionFooterHeight="28" id="9hO-6H-RTe">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="120" sectionHeaderHeight="28" sectionFooterHeight="28" id="9hO-6H-RTe">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -19,17 +19,17 @@
                                 <rect key="frame" x="0.0" y="92" width="600" height="120"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="YP2-Mc-FMm" id="Qj1-2w-HCL">
-                                    <rect key="frame" x="0.0" y="0.0" width="600" height="119"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="600" height="120"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="c1H-lr-fww">
-                                            <rect key="frame" x="8" y="0.0" width="152" height="111"/>
+                                            <rect key="frame" x="8" y="0.0" width="152" height="119"/>
                                             <constraints>
                                                 <constraint firstAttribute="width" constant="152" id="RWU-jW-vyR"/>
                                             </constraints>
                                         </imageView>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4iI-Ft-Wh4">
-                                            <rect key="frame" x="176" y="0.0" width="397" height="111"/>
+                                            <rect key="frame" x="176" y="0.0" width="405" height="119"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                             <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                             <nil key="highlightedColor"/>
@@ -37,12 +37,12 @@
                                     </subviews>
                                     <constraints>
                                         <constraint firstItem="4iI-Ft-Wh4" firstAttribute="leading" secondItem="c1H-lr-fww" secondAttribute="trailing" constant="16" id="9NT-Kx-a8e"/>
-                                        <constraint firstItem="4iI-Ft-Wh4" firstAttribute="bottom" secondItem="Qj1-2w-HCL" secondAttribute="bottomMargin" id="A8X-DZ-fvG"/>
-                                        <constraint firstItem="c1H-lr-fww" firstAttribute="bottom" secondItem="Qj1-2w-HCL" secondAttribute="bottomMargin" id="Cbb-gQ-G0R"/>
+                                        <constraint firstItem="4iI-Ft-Wh4" firstAttribute="bottom" secondItem="Qj1-2w-HCL" secondAttribute="bottomMargin" constant="7" id="A8X-DZ-fvG"/>
+                                        <constraint firstItem="c1H-lr-fww" firstAttribute="bottom" secondItem="Qj1-2w-HCL" secondAttribute="bottomMargin" constant="7" id="Cbb-gQ-G0R"/>
                                         <constraint firstItem="4iI-Ft-Wh4" firstAttribute="top" secondItem="Qj1-2w-HCL" secondAttribute="topMargin" constant="-8" id="INJ-xA-HEB"/>
                                         <constraint firstItem="4iI-Ft-Wh4" firstAttribute="leading" secondItem="c1H-lr-fww" secondAttribute="trailing" constant="16" id="Mml-FV-0BA"/>
                                         <constraint firstItem="c1H-lr-fww" firstAttribute="leading" secondItem="Qj1-2w-HCL" secondAttribute="leadingMargin" id="bwV-72-2N8"/>
-                                        <constraint firstAttribute="trailingMargin" secondItem="4iI-Ft-Wh4" secondAttribute="trailing" constant="19" id="oV0-Fy-Pvj"/>
+                                        <constraint firstAttribute="trailingMargin" secondItem="4iI-Ft-Wh4" secondAttribute="trailing" constant="11" id="oV0-Fy-Pvj"/>
                                         <constraint firstItem="c1H-lr-fww" firstAttribute="top" secondItem="Qj1-2w-HCL" secondAttribute="topMargin" constant="-8" id="zzO-eZ-Gmo"/>
                                     </constraints>
                                 </tableViewCellContentView>
@@ -85,14 +85,14 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Dhp-Y0-zoz">
-                                <rect key="frame" x="0.0" y="28" width="600" height="572"/>
+                                <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                             </imageView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstAttribute="trailingMargin" secondItem="Dhp-Y0-zoz" secondAttribute="trailing" constant="-20" id="0n0-OR-kFi"/>
                             <constraint firstItem="Dhp-Y0-zoz" firstAttribute="leading" secondItem="8dw-kQ-JCw" secondAttribute="leadingMargin" constant="-20" id="AYZ-fp-gwg"/>
-                            <constraint firstItem="Dhp-Y0-zoz" firstAttribute="top" secondItem="j2d-6e-Cnv" secondAttribute="bottom" constant="8" id="XWd-E9-ss7"/>
+                            <constraint firstItem="Dhp-Y0-zoz" firstAttribute="top" secondItem="j2d-6e-Cnv" secondAttribute="bottom" constant="-20" id="XWd-E9-ss7"/>
                             <constraint firstItem="VZa-mI-wiN" firstAttribute="top" secondItem="Dhp-Y0-zoz" secondAttribute="bottom" id="zb3-ES-b15"/>
                         </constraints>
                     </view>
