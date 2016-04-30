@@ -21,11 +21,17 @@ class SentMemesTableViewController: UITableViewController {
     ]
     
     override func viewDidAppear(animated: Bool) {
-        tabBarController?.tabBar.hidden = false
+        super.viewDidAppear(true)
+        if memes.isEmpty {
+            let memeEditorVC = storyboard?.instantiateViewControllerWithIdentifier("MemeEditorViewController") as! MemeEditorViewController
+            presentViewController(memeEditorVC, animated: true, completion: {
+                memeEditorVC.cancelButton.enabled = false
+            })
+        }
+        
         tableView.reloadData()
     }
-
-        
+    
     // MARK: -UITableViewController
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return memes.count

@@ -20,10 +20,6 @@ class SentMemesCollectionViewController: UICollectionViewController {
         collectionView?.reloadData()
     }
     
-    override func viewWillAppear(animated: Bool) {
-        tabBarController?.tabBar.hidden = false
-    }
-    
     var memes: [Meme] {
         return (UIApplication.sharedApplication().delegate as! AppDelegate).memes
     }
