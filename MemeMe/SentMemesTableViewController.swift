@@ -22,13 +22,6 @@ class SentMemesTableViewController: UITableViewController {
     
     override func viewDidAppear(animated: Bool) {
         super.viewDidAppear(true)
-        if memes.isEmpty {
-            let memeEditorVC = storyboard?.instantiateViewControllerWithIdentifier("MemeEditorViewController") as! MemeEditorViewController
-            presentViewController(memeEditorVC, animated: true, completion: {
-                memeEditorVC.cancelButton.enabled = false
-            })
-        }
-        
         tableView.reloadData()
     }
     
