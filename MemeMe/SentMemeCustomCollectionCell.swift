@@ -11,5 +11,7 @@ import UIKit
 class SentMemeCustomCollectionCell: UICollectionViewCell {
     
     @IBOutlet weak var memeImageView: UIImageView!
+    @IBOutlet weak var topLabel: UILabel!
+    @IBOutlet weak var bottomLabel: UILabel!
 
 }

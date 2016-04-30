@@ -10,6 +10,12 @@ import UIKit
 
 class SentMemesCollectionViewController: UICollectionViewController {
     
+    let textLabelAttributes = [
+        NSStrokeColorAttributeName: UIColor.blackColor(),
+        NSForegroundColorAttributeName: UIColor.whiteColor(),
+        NSStrokeWidthAttributeName: -3.5,
+        ]
+    
     override func viewDidAppear(animated: Bool) {
         collectionView?.reloadData()
     }
@@ -32,7 +38,9 @@ class SentMemesCollectionViewController: UICollectionViewController {
         
         let meme = memes[indexPath.row]
         
-        cell.memeImageView.image = meme.memedImage
+        cell.memeImageView.image = meme.image
+        cell.topLabel.attributedText = NSAttributedString(string: meme.topText, attributes: textLabelAttributes)
+        cell.bottomLabel.attributedText = NSAttributedString(string: meme.bottomText, attributes: textLabelAttributes)
         
         return cell
     }

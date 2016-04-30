@@ -19,6 +19,7 @@ class SentMemesTableViewController: UITableViewController {
         NSForegroundColorAttributeName: UIColor.whiteColor(),
         NSStrokeWidthAttributeName: -3.5,
     ]
+    
     override func viewDidAppear(animated: Bool) {
         tabBarController?.tabBar.hidden = false
         tableView.reloadData()
