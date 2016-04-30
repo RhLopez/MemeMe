@@ -22,11 +22,6 @@ class SentMemesCollectionViewController: UICollectionViewController {
         return (UIApplication.sharedApplication().delegate as! AppDelegate).memes
     }
     
-    @IBAction func createMeme(sender: AnyObject) {
-        let memeEditorVC = storyboard?.instantiateViewControllerWithIdentifier("MemeEditorViewController") as! MemeEditorViewController
-        presentViewController(memeEditorVC, animated: true, completion: nil)
-    }
-    
     // MARK: -UICollectionView 
     override func collectionView(collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return memes.count

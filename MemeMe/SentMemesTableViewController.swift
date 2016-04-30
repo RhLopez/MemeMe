@@ -10,20 +10,21 @@ import UIKit
 
 class SentMemesTableViewController: UITableViewController {
     
-    override func viewDidAppear(animated: Bool) {
-        tabBarController?.tabBar.hidden = false
-        tableView.reloadData()
-    }
-    
     var memes: [Meme] {
         return (UIApplication.sharedApplication().delegate as! AppDelegate).memes
     }
     
-    @IBAction func createNewMeme(sender: AnyObject) {
-        let memeEditorVC = storyboard?.instantiateViewControllerWithIdentifier("MemeEditorViewController") as! MemeEditorViewController
-        presentViewController(memeEditorVC, animated: true, completion: nil)
+    let textLabelAttributes = [
+        NSStrokeColorAttributeName: UIColor.blackColor(),
+        NSForegroundColorAttributeName: UIColor.whiteColor(),
+        NSStrokeWidthAttributeName: -3.5,
+    ]
+    override func viewDidAppear(animated: Bool) {
+        tabBarController?.tabBar.hidden = false
+        tableView.reloadData()
     }
-    
+
+        
     // MARK: -UITableViewController
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return memes.count
@@ -33,8 +34,10 @@ class SentMemesTableViewController: UITableViewController {
         let cell = tableView.dequeueReusableCellWithIdentifier("sentMemeCell") as! SentMemeCustomCell
         let meme = memes[indexPath.row]
         
-        cell.memeImageView.image = meme.memedImage
-        cell.memeLabel.text = meme.topText + " " + meme.bottomText
+        cell.memeImageView.image = meme.image
+        cell.topLabel.attributedText = NSAttributedString(string: meme.topText, attributes: textLabelAttributes)
+        cell.bottomLabel.attributedText = NSAttributedString(string: meme.bottomText, attributes: textLabelAttributes)
+        cell.memeLabel.text = meme.topText + "..." + meme.bottomText
     
         return cell
     }

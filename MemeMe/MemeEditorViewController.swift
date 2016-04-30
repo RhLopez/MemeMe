@@ -25,7 +25,7 @@ class MemeEditorViewController: UIViewController {
     var memedImage: UIImage?
     var meme: Meme?
     
-    // Text attributes for textfields
+    // Text attributes
     let memeTextAttributes = [
         NSStrokeColorAttributeName: UIColor.blackColor(),
         NSForegroundColorAttributeName: UIColor.whiteColor(),

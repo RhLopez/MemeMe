@@ -12,5 +12,6 @@ class SentMemeCustomCell: UITableViewCell {
     
     @IBOutlet weak var memeImageView: UIImageView!
     @IBOutlet weak var memeLabel: UILabel!
-    
+    @IBOutlet weak var topLabel: UILabel!
+    @IBOutlet weak var bottomLabel: UILabel!
 }
