@@ -10,21 +10,45 @@ import UIKit
 
 class SentMemesCollectionViewController: UICollectionViewController {
     
+    @IBOutlet weak var flowLayout: UICollectionViewFlowLayout!
+    
     let textLabelAttributes = [
         NSStrokeColorAttributeName: UIColor.blackColor(),
         NSForegroundColorAttributeName: UIColor.whiteColor(),
         NSStrokeWidthAttributeName: -3.5,
         ]
     
-    override func viewDidAppear(animated: Bool) {
-        collectionView?.reloadData()
-    }
-    
     var memes: [Meme] {
         return (UIApplication.sharedApplication().delegate as! AppDelegate).memes
     }
     
-    // MARK: -UICollectionView 
+    override func viewDidAppear(animated: Bool) {
+        collectionView?.reloadData()
+    }
+
+    func getCellCGSize() -> CGSize {
+        let space: CGFloat = 1.5
+        let multiplier: CGFloat
+        let divisor: CGFloat
+        
+        if UIDevice.currentDevice().orientation.isLandscape.boolValue {
+            multiplier = 6
+            divisor = 5.0
+        } else {
+            multiplier = 2
+            divisor = 3.0
+        }
+        
+        let dimension = (view.bounds.width - (multiplier * space)) / divisor
+        
+        return CGSizeMake(dimension, dimension)
+    }
+    
+    override func viewWillTransitionToSize(size: CGSize, withTransitionCoordinator coordinator: UIViewControllerTransitionCoordinator) {
+        collectionViewLayout.invalidateLayout()
+    }
+    
+    // MARK: UICollectionViewDataSource
     override func collectionView(collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return memes.count
     }
@@ -48,3 +72,10 @@ class SentMemesCollectionViewController: UICollectionViewController {
         navigationController?.pushViewController(memeDetailVC, animated: true)
     }
 }
+
+extension SentMemesCollectionViewController: UICollectionViewDelegateFlowLayout {
+    func collectionView(collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAtIndexPath indexPath: NSIndexPath) -> CGSize {
+        return getCellCGSize()
+    }
+}
+
