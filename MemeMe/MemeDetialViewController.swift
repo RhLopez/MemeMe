@@ -13,19 +13,28 @@ class MemeDetailViewController: UIViewController {
     @IBOutlet weak var memeImageView: UIImageView!
     
     var meme: Meme!
+    var returnFromEditor: Bool?
 
     override func viewDidLoad() {
+        super.viewDidLoad()
         let editButton = UIBarButtonItem(title: "Edit", style: .Plain, target: self, action: #selector(MemeDetailViewController.editButtonPressed))
         navigationItem.rightBarButtonItem = editButton
     }
+    
     override func viewWillAppear(animated: Bool) {
-        memeImageView.image = meme.memedImage
+        super.viewWillAppear(true)
+        if returnFromEditor == true {
+            navigationController?.popToRootViewControllerAnimated(true)
+        } else {
+            memeImageView.image = meme.memedImage
+        }
     }
     
     func editButtonPressed() {
         let memeEditorVC = storyboard?.instantiateViewControllerWithIdentifier("MemeEditorViewController") as! MemeEditorViewController
         memeEditorVC.meme = meme
-        presentViewController(memeEditorVC, animated: true, completion: nil)
-        navigationController?.popToRootViewControllerAnimated(false)
+        presentViewController(memeEditorVC, animated: true, completion: {
+            self.returnFromEditor = true
+        })
     }
 }

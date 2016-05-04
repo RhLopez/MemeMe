@@ -215,5 +215,3 @@ extension MemeEditorViewController: UITextFieldDelegate {
         return true
     }
 }
-
-
