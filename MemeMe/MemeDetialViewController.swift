@@ -17,7 +17,7 @@ class MemeDetailViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        let editButton = UIBarButtonItem(title: "Edit", style: .Plain, target: self, action: #selector(MemeDetailViewController.editButtonPressed))
+        let editButton = UIBarButtonItem(title: "Edit", style: .Plain, target: self, action: #selector(editButtonPressed))
         navigationItem.rightBarButtonItem = editButton
     }
     

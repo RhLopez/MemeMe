@@ -86,6 +86,9 @@
                     <tabBarItem key="tabBarItem" title="" image="Table" id="inu-al-bIf"/>
                     <toolbarItems/>
                     <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
+                    <connections>
+                        <outlet property="memeTableView" destination="9hO-6H-RTe" id="5Uc-S1-g3D"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="feT-Os-OKl" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -195,7 +198,8 @@
                     </collectionView>
                     <tabBarItem key="tabBarItem" title="" image="Collection" id="ntb-ii-dcB"/>
                     <connections>
-                        <outlet property="flowLayout" destination="uyA-xX-13P" id="zjw-WE-cXG"/>
+                        <outlet property="flowLayout" destination="uyA-xX-13P" id="VJI-MC-SaT"/>
+                        <outlet property="memeCollectionView" destination="Vln-i0-Khg" id="IPd-2T-gEx"/>
                     </connections>
                 </collectionViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="VeO-BJ-IBb" userLabel="First Responder" sceneMemberID="firstResponder"/>

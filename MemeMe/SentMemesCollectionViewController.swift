@@ -11,23 +11,19 @@ import UIKit
 class SentMemesCollectionViewController: UICollectionViewController {
     
     @IBOutlet weak var flowLayout: UICollectionViewFlowLayout!
+    @IBOutlet var memeCollectionView: UICollectionView!
     
-    let textLabelAttributes = [
-        NSStrokeColorAttributeName: UIColor.blackColor(),
-        NSForegroundColorAttributeName: UIColor.whiteColor(),
-        NSFontAttributeName: UIFont(name: "HelveticaNeue-CondensedBlack", size: 20)!,
-        NSStrokeWidthAttributeName: -3.5,
-        ]
+    var labelTextAttribute = MemeTextAttributes()
     
     var memes: [Meme] {
         return (UIApplication.sharedApplication().delegate as! AppDelegate).memes
     }
     
     override func viewDidAppear(animated: Bool) {
-        collectionView?.reloadData()
+        memeCollectionView.reloadData()
     }
 
-    func getCellCGSize() -> CGSize {
+    func getCellSize() -> CGSize {
         let space: CGFloat = 1.5
         let multiplier: CGFloat
         let divisor: CGFloat
@@ -48,8 +44,10 @@ class SentMemesCollectionViewController: UICollectionViewController {
     override func viewWillTransitionToSize(size: CGSize, withTransitionCoordinator coordinator: UIViewControllerTransitionCoordinator) {
         collectionViewLayout.invalidateLayout()
     }
-    
-    // MARK: UICollectionViewDataSource
+}
+
+// MARK: - UICollectionViewDataSource
+extension SentMemesCollectionViewController {
     override func collectionView(collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return memes.count
     }
@@ -60,8 +58,8 @@ class SentMemesCollectionViewController: UICollectionViewController {
         let meme = memes[indexPath.row]
         
         cell.memeImageView.image = meme.image
-        cell.topLabel.attributedText = NSAttributedString(string: meme.topText, attributes: textLabelAttributes)
-        cell.bottomLabel.attributedText = NSAttributedString(string: meme.bottomText, attributes: textLabelAttributes)
+        cell.topLabel.attributedText = NSAttributedString(string: meme.topText, attributes: labelTextAttribute.textAttribute(.Label))
+        cell.bottomLabel.attributedText = NSAttributedString(string: meme.bottomText, attributes: labelTextAttribute.textAttribute(.Label))
         
         return cell
     }
@@ -74,9 +72,10 @@ class SentMemesCollectionViewController: UICollectionViewController {
     }
 }
 
+// MARK: - UICollectionViewDelegateFlowLayout
 extension SentMemesCollectionViewController: UICollectionViewDelegateFlowLayout {
     func collectionView(collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAtIndexPath indexPath: NSIndexPath) -> CGSize {
-        return getCellCGSize()
+        return getCellSize()
     }
 }
 

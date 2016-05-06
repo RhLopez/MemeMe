@@ -26,12 +26,7 @@ class MemeEditorViewController: UIViewController {
     var meme: Meme?
     
     // Text attributes
-    let memeTextAttributes = [
-        NSStrokeColorAttributeName: UIColor.blackColor(),
-        NSForegroundColorAttributeName: UIColor.whiteColor(),
-        NSFontAttributeName: UIFont(name: "HelveticaNeue-CondensedBlack", size: 40)!,
-        NSStrokeWidthAttributeName: -3.5,
-        ]
+    var textFieldAttribute = MemeTextAttributes()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -55,7 +50,7 @@ class MemeEditorViewController: UIViewController {
     
     func configureUITextfields(textField: UITextField) {
         textField.delegate = self
-        textField.defaultTextAttributes = memeTextAttributes
+        textField.defaultTextAttributes = textFieldAttribute.textAttribute(.TextField)
         textField.textAlignment = .Center
     }
     
@@ -132,8 +127,7 @@ class MemeEditorViewController: UIViewController {
         let meme = Meme(topText: topTextField.text!, bottomText: bottomTextField.text!, image: imagePickerView.image!, memedImage: memedImage!)
         
         // Add meme to array in the Application Delegate
-        let object = UIApplication.sharedApplication().delegate
-        let appDelegate = object as! AppDelegate
+        let appDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
         appDelegate.memes.append(meme)
     }
     
@@ -185,7 +179,7 @@ class MemeEditorViewController: UIViewController {
     }
 }
 
-// MARK: UIImagePickerControlDelegate
+// MARK: - UIImagePickerControlDelegate
 extension MemeEditorViewController: UIImagePickerControllerDelegate, UINavigationControllerDelegate {
     
     func imagePickerController(picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : AnyObject]) {
@@ -201,7 +195,7 @@ extension MemeEditorViewController: UIImagePickerControllerDelegate, UINavigatio
     }
 }
 
-// MARK: UITextFieldDelegate
+// MARK: - UITextFieldDelegate
 extension MemeEditorViewController: UITextFieldDelegate {
     
     func textFieldDidBeginEditing(textField: UITextField) {

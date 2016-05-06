@@ -2,38 +2,34 @@
 //  MemeTextAttributes.swift
 //  MemeMe
 //
-//  Created by Ramiro H. Lopez on 5/4/16.
+//  Created by Ramiro H. Lopez on 5/5/16.
 //  Copyright © 2016 Ramiro H. Lopez. All rights reserved.
 //
 
 import UIKit
 
 struct MemeTextAttributes {
+    let textFieldFontSize: CGFloat = 40
+    let labelFontSize: CGFloat = 22
+    var textAttributes = [
+        NSStrokeColorAttributeName: UIColor.blackColor(),
+        NSForegroundColorAttributeName: UIColor.whiteColor(),
+        NSStrokeWidthAttributeName: -3.5,
+        ]
     
-    let textFieldTextSize: CGFloat = 40
-    let labelTextSize: CGFloat = 18
-        
     enum Type {
         case TextField
         case Label
     }
     
-    
-    func getAttribute(type: Type) -> Dictionary<String, AnyObject>{
-        var textAttribute = [
-            NSStrokeColorAttributeName: UIColor.blackColor(),
-            NSForegroundColorAttributeName: UIColor.whiteColor(),
-            NSStrokeWidthAttributeName: -3.5,
-            ]
-        
+    mutating func textAttribute(type: Type) -> Dictionary<String, NSObject>{
         switch type {
         case .TextField:
-            textAttribute = [NSFontAttributeName: UIFont(name: "HelveticaNeue-CondensedBlack", size: textFieldTextSize)!]
+            textAttributes[NSFontAttributeName] = UIFont(name: "HelveticaNeue-CondensedBlack", size: textFieldFontSize)!
+            return textAttributes
         case .Label:
-            textAttribute = [NSFontAttributeName: UIFont(name: "HelveticaNeue-CondensedBlack", size: labelTextSize)!]
+            textAttributes[NSFontAttributeName] = UIFont(name: "HelveticaNeue-CondensedBlack", size: labelFontSize)!
+            return textAttributes
         }
-        
-        return textAttribute
     }
-    
 }
