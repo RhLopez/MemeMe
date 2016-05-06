@@ -38,6 +38,7 @@ class MemeEditorViewController: UIViewController {
         super.viewWillAppear(animated)
         subscribeToKeyboardNotifications()
         configureUIButtons()
+        // Update editor with saved meme
         if let meme = meme {
             memeEditSetup(meme)
         }
@@ -64,6 +65,12 @@ class MemeEditorViewController: UIViewController {
         } else {
             actionButton.enabled = true
         }
+    }
+    
+    func memeEditSetup(meme: Meme) {
+        topTextField.text = meme.topText
+        bottomTextField.text = meme.bottomText
+        imagePickerView.image = meme.image
     }
     
     @IBAction func userSelection(sender: AnyObject) {
@@ -170,12 +177,6 @@ class MemeEditorViewController: UIViewController {
             topTextFieldConstraint.constant = 60
             bottomTextFiedConstraint.constant = 60
         }
-    }
-    
-    func memeEditSetup(meme: Meme) {
-        topTextField.text = meme.topText
-        bottomTextField.text = meme.bottomText
-        imagePickerView.image = meme.image
     }
 }
 
