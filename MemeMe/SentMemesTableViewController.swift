@@ -16,6 +16,7 @@ class SentMemesTableViewController: UIViewController {
     
     @IBOutlet var memeTableView: UITableView!
 
+    // Variable to retrieve text attributes
     var labelTextAttribute = MemeTextAttributes()
 
     override func viewDidAppear(animated: Bool) {

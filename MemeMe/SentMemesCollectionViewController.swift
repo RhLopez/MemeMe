@@ -13,6 +13,7 @@ class SentMemesCollectionViewController: UICollectionViewController {
     @IBOutlet weak var flowLayout: UICollectionViewFlowLayout!
     @IBOutlet var memeCollectionView: UICollectionView!
     
+    // Variable to retrieve text attributes
     var labelTextAttribute = MemeTextAttributes()
     
     var memes: [Meme] {
@@ -20,6 +21,7 @@ class SentMemesCollectionViewController: UICollectionViewController {
     }
     
     override func viewDidAppear(animated: Bool) {
+        super.viewDidAppear(animated)
         memeCollectionView.reloadData()
     }
 

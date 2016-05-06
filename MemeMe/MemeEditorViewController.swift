@@ -25,7 +25,7 @@ class MemeEditorViewController: UIViewController {
     var memedImage: UIImage?
     var meme: Meme?
     
-    // Text attributes
+    // Variable to retrieve text attributes
     var textFieldAttribute = MemeTextAttributes()
     
     override func viewDidLoad() {
@@ -74,8 +74,8 @@ class MemeEditorViewController: UIViewController {
     }
     
     func subscribeToKeyboardNotifications() {
-        NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(MemeEditorViewController.keyboardWillShow(_:)), name: UIKeyboardWillShowNotification, object: nil)
-        NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(MemeEditorViewController.keyboardWillHide(_:)), name: UIKeyboardWillHideNotification, object: nil)
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(keyboardWillShow(_:)), name: UIKeyboardWillShowNotification, object: nil)
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(keyboardWillHide(_:)), name: UIKeyboardWillHideNotification, object: nil)
     }
     
     func unsubscibeFromKeyboardNotifications() {

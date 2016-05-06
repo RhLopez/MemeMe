@@ -22,7 +22,8 @@ class MemeDetailViewController: UIViewController {
     }
     
     override func viewWillAppear(animated: Bool) {
-        super.viewWillAppear(true)
+        super.viewWillAppear(animated)
+        // Pop to root view controller if the user
         if returnFromEditor == true {
             navigationController?.popToRootViewControllerAnimated(true)
         } else {
