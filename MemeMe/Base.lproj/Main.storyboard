@@ -6,7 +6,7 @@
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
-        <!--Table-->
+        <!--Sent Memes Table View Controller-->
         <scene sceneID="KT3-Vw-wla">
             <objects>
                 <tableViewController id="0hf-w1-bHo" customClass="SentMemesTableViewController" customModule="MemeMe" customModuleProvider="target" sceneMemberID="viewController">
@@ -22,10 +22,10 @@
                                     <rect key="frame" x="0.0" y="0.0" width="600" height="120"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="c1H-lr-fww">
-                                            <rect key="frame" x="8" y="0.0" width="152" height="119"/>
+                                        <imageView autoresizesSubviews="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="c1H-lr-fww">
+                                            <rect key="frame" x="7" y="0.0" width="154" height="119"/>
                                             <constraints>
-                                                <constraint firstAttribute="width" constant="152" id="RWU-jW-vyR"/>
+                                                <constraint firstAttribute="width" constant="154" id="RWU-jW-vyR"/>
                                             </constraints>
                                         </imageView>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4iI-Ft-Wh4">
@@ -35,11 +35,11 @@
                                             <nil key="highlightedColor"/>
                                         </label>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JVT-Z3-U2p">
-                                            <rect key="frame" x="21" y="8" width="126" height="29"/>
+                                            <rect key="frame" x="21" y="6" width="126" height="29"/>
                                             <constraints>
                                                 <constraint firstAttribute="height" constant="29" id="9o9-sI-oOx"/>
                                             </constraints>
-                                            <fontDescription key="fontDescription" name="HelveticaNeue-CondensedBlack" family="Helvetica Neue" pointSize="17"/>
+                                            <fontDescription key="fontDescription" name="HelveticaNeue-CondensedBlack" family="Helvetica Neue" pointSize="18"/>
                                             <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                             <nil key="highlightedColor"/>
                                         </label>
@@ -54,17 +54,17 @@
                                         </label>
                                     </subviews>
                                     <constraints>
-                                        <constraint firstItem="4iI-Ft-Wh4" firstAttribute="leading" secondItem="c1H-lr-fww" secondAttribute="trailing" constant="16" id="9NT-Kx-a8e"/>
+                                        <constraint firstItem="4iI-Ft-Wh4" firstAttribute="leading" secondItem="c1H-lr-fww" secondAttribute="trailing" constant="15" id="9NT-Kx-a8e"/>
                                         <constraint firstItem="4iI-Ft-Wh4" firstAttribute="bottom" secondItem="Qj1-2w-HCL" secondAttribute="bottomMargin" constant="7" id="A8X-DZ-fvG"/>
                                         <constraint firstItem="c1H-lr-fww" firstAttribute="bottom" secondItem="Qj1-2w-HCL" secondAttribute="bottomMargin" constant="7" id="Cbb-gQ-G0R"/>
                                         <constraint firstItem="4iI-Ft-Wh4" firstAttribute="top" secondItem="Qj1-2w-HCL" secondAttribute="topMargin" constant="-8" id="INJ-xA-HEB"/>
-                                        <constraint firstItem="4iI-Ft-Wh4" firstAttribute="leading" secondItem="c1H-lr-fww" secondAttribute="trailing" constant="16" id="Mml-FV-0BA"/>
+                                        <constraint firstItem="4iI-Ft-Wh4" firstAttribute="leading" secondItem="c1H-lr-fww" secondAttribute="trailing" constant="15" id="Mml-FV-0BA"/>
                                         <constraint firstItem="1o1-vq-ARW" firstAttribute="leading" secondItem="Qj1-2w-HCL" secondAttribute="leadingMargin" constant="13" id="T2o-hO-u8O"/>
-                                        <constraint firstItem="c1H-lr-fww" firstAttribute="leading" secondItem="Qj1-2w-HCL" secondAttribute="leadingMargin" id="bwV-72-2N8"/>
+                                        <constraint firstItem="c1H-lr-fww" firstAttribute="leading" secondItem="Qj1-2w-HCL" secondAttribute="leadingMargin" constant="-1" id="bwV-72-2N8"/>
                                         <constraint firstItem="4iI-Ft-Wh4" firstAttribute="leading" secondItem="JVT-Z3-U2p" secondAttribute="trailing" constant="29" id="j2k-it-fDB"/>
                                         <constraint firstAttribute="trailingMargin" secondItem="4iI-Ft-Wh4" secondAttribute="trailing" constant="11" id="oV0-Fy-Pvj"/>
                                         <constraint firstItem="4iI-Ft-Wh4" firstAttribute="leading" secondItem="1o1-vq-ARW" secondAttribute="trailing" constant="29" id="rhd-rA-HHF"/>
-                                        <constraint firstItem="JVT-Z3-U2p" firstAttribute="top" secondItem="Qj1-2w-HCL" secondAttribute="topMargin" id="tgB-HQ-crh"/>
+                                        <constraint firstItem="JVT-Z3-U2p" firstAttribute="top" secondItem="Qj1-2w-HCL" secondAttribute="topMargin" constant="-2" id="tgB-HQ-crh"/>
                                         <constraint firstItem="1o1-vq-ARW" firstAttribute="bottom" secondItem="Qj1-2w-HCL" secondAttribute="bottomMargin" id="utF-qX-xoE"/>
                                         <constraint firstItem="JVT-Z3-U2p" firstAttribute="leading" secondItem="Qj1-2w-HCL" secondAttribute="leadingMargin" constant="13" id="xSt-mw-wVF"/>
                                         <constraint firstItem="c1H-lr-fww" firstAttribute="top" secondItem="Qj1-2w-HCL" secondAttribute="topMargin" constant="-8" id="zzO-eZ-Gmo"/>
@@ -83,7 +83,7 @@
                             <outlet property="delegate" destination="0hf-w1-bHo" id="kBG-W3-UYJ"/>
                         </connections>
                     </tableView>
-                    <tabBarItem key="tabBarItem" title="Table" image="Table" id="inu-al-bIf"/>
+                    <tabBarItem key="tabBarItem" title="" image="Table" id="inu-al-bIf"/>
                     <toolbarItems/>
                     <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
                 </tableViewController>
@@ -123,7 +123,7 @@
             </objects>
             <point key="canvasLocation" x="759" y="-96"/>
         </scene>
-        <!--Collection-->
+        <!--Sent Memes Collection View Controller-->
         <scene sceneID="hZp-nv-SjQ">
             <objects>
                 <collectionViewController id="2U9-Lv-Bp1" customClass="SentMemesCollectionViewController" customModule="MemeMe" customModuleProvider="target" sceneMemberID="viewController">
@@ -193,7 +193,7 @@
                             <outlet property="delegate" destination="2U9-Lv-Bp1" id="XhV-Ye-0x7"/>
                         </connections>
                     </collectionView>
-                    <tabBarItem key="tabBarItem" title="Collection" image="Collection" id="ntb-ii-dcB"/>
+                    <tabBarItem key="tabBarItem" title="" image="Collection" id="ntb-ii-dcB"/>
                     <connections>
                         <outlet property="flowLayout" destination="uyA-xX-13P" id="zjw-WE-cXG"/>
                     </connections>
@@ -303,7 +303,7 @@
                                 <textInputTraits key="textInputTraits" autocapitalizationType="allCharacters" autocorrectionType="no"/>
                             </textField>
                         </subviews>
-                        <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="hNR-kw-ae6" firstAttribute="top" secondItem="2us-aZ-i6y" secondAttribute="bottom" id="1GW-CF-UMM"/>
                             <constraint firstItem="2us-aZ-i6y" firstAttribute="top" secondItem="bCl-up-CWk" secondAttribute="bottom" constant="65" id="1KF-gX-NES"/>

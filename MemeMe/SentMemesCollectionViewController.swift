@@ -15,6 +15,7 @@ class SentMemesCollectionViewController: UICollectionViewController {
     let textLabelAttributes = [
         NSStrokeColorAttributeName: UIColor.blackColor(),
         NSForegroundColorAttributeName: UIColor.whiteColor(),
+        NSFontAttributeName: UIFont(name: "HelveticaNeue-CondensedBlack", size: 20)!,
         NSStrokeWidthAttributeName: -3.5,
         ]
     
